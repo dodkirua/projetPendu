@@ -56,7 +56,6 @@ function init(){
     }
     wordDiv = document.getElementById("word").getElementsByTagName("div");
     document.getElementById("input").value = "";
-    console.log(find);
 }
 
 function reinit(){
