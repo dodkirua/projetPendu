@@ -31,8 +31,19 @@ document.addEventListener("click" , function (e){
         case buttonReset :
             reinit();
             break;
-    }
 
+    }
+});
+
+document.addEventListener("keypress" , function (e){
+    switch (e.key){
+        case "Enter" :
+            testLetter(document.getElementById("input").value.toLowerCase());
+            document.getElementById("input").value = "";
+            break;
+
+
+    }
 });
 
 function randomWord(){
