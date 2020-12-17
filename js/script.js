@@ -9,7 +9,13 @@ let words = [
     "fromage",
     "assiette",
     "corbeau",
-    "marron"
+    "marron",
+    "druide",
+    "professionnel",
+    "compote",
+    "prosperite",
+    "pomme",
+
 ]
 let alphaB = "";
 let error;
