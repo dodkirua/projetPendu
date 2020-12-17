@@ -3,7 +3,7 @@ let words = [
     "conspirateur",
     "redondant",
     "peremptoire",
-    "redingotte",
+    "redingote",
     "ostentatoire",
     "salsifis",
     "fromage",
@@ -42,7 +42,7 @@ function randomWord(){
 function init(){
     let word = document.getElementById("word");
     let newDiv;
-    alphaB = "abcdefhhijklmnopqrstuvwxyz";
+    alphaB = "abcdefghijklmnopqrstuvwxyz";
     remain.innerHTML = alphaB.toUpperCase();
     error = 1;
     findLetterEmpty = 0;
