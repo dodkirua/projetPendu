@@ -21,6 +21,7 @@ let alphaB = "";
 let error;
 let remain = document.getElementById("remain").getElementsByTagName("p")[1];
 let find  = "";
+let findCopy = "";
 let wordDiv = [];
 let buttonValid = document.getElementById("text").getElementsByTagName("button")[0];
 let buttonReset = document.getElementById("text").getElementsByTagName("button")[1];
@@ -31,13 +32,13 @@ init();
 document.addEventListener("click" , function (e){
     switch (e.target){
         case buttonValid :
+            testWord(document.getElementById("inputWord").value.toLowerCase());
             testLetter(document.getElementById("input").value.toLowerCase());
             document.getElementById("input").value = "";
             break;
         case buttonReset :
             reinit();
             break;
-
     }
 });
 
@@ -47,8 +48,6 @@ document.addEventListener("keypress" , function (e){
             testLetter(document.getElementById("input").value.toLowerCase());
             document.getElementById("input").value = "";
             break;
-
-
     }
 });
 
@@ -66,6 +65,7 @@ function init(){
     buttonValid.hidden = false;
     changeImage(error);
     find = randomWord();
+    findCopy = find;
     for (let i = 0 ; i < find.length ; i++){
         newDiv = document.createElement("div");
         newDiv.style.width = Math.floor(100/ find.length)-0.1+"%";
@@ -73,6 +73,7 @@ function init(){
     }
     wordDiv = document.getElementById("word").getElementsByTagName("div");
     document.getElementById("input").value = "";
+    document.getElementById("inputWord").value = "";
 }
 
 function reinit(){
@@ -128,6 +129,19 @@ function testLetter(letter){
             alphaB.splice(alphaB.indexOf(letter), 1);
             alphaB = alphaB.join('');
             remain.innerHTML = alphaB.toUpperCase();
+        }
+    }
+}
+
+function testWord(word){
+    if (word !== ""){
+        if (word === findCopy){
+            buttonValid.hidden = true;
+            changeImage("victory");
+        }
+        else {
+            changeImage(7);
+            buttonValid.hidden = true;
         }
     }
 }
