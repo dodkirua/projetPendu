@@ -45,6 +45,7 @@ document.addEventListener("click" , function (e){
 document.addEventListener("keypress" , function (e){
     switch (e.key){
         case "Enter" :
+            testWord(document.getElementById("inputWord").value.toLowerCase());
             testLetter(document.getElementById("input").value.toLowerCase());
             document.getElementById("input").value = "";
             break;
